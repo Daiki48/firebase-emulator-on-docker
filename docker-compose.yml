@@ -1,0 +1,26 @@
+version: '3'
+services:
+  firebase:
+    build:
+      context: ./docker/firebase
+      dockerfile: Dockerfile.firebase-ubuntu
+    volumes:
+      - ./docker/firebase:/app
+      - ./docker/firebase/.firebaserc:/opt/firebase/.firebaserc
+      - ./docker/firebase/firebase.json:/opt/firebase/firebase.json
+      - ./docker/firebase/firestore.indexes.json:/opt/firebase/firestore.indexes.json
+      - ./docker/firebase/firestore.rules:/opt/firebase/firestore.rules
+      - ./docker/firebase/storage.rules:/opt/firebase/storage.rules
+      - ./docker/firebase/bin/:/root/.cache:cached
+      - ./docker/firebase/config/:/root/.config:cached
+    ports:
+      - 9091:9091 # Firebase Authentication
+      - 5002:5002 # Clound Functions
+      - 8081:8081 # Cloud Firestore
+      - 9001:9001 # Realtime Database
+      - 5001:5001 # Firebase Hosting
+      - 8086:8086 # Cloud Pub/Sub
+      - 9191:9191 # Cloud Storage
+      - 4001:4001 # Emulator Suite UI
+    working_dir: /opt/firebase
+    tty: true

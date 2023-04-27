@@ -1,0 +1,8 @@
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow the user to access documents in the "cities" collection
+    match /cities/{city} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
