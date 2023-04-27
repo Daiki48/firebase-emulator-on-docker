@@ -4,12 +4,12 @@
 
 Setup to build [Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite) in a Docker container.
 
-:warning: Not tested on Mac and Linux Desktop. :warning:
+:warning: Not tested on Mac and Linux Desktop. :warning:  
 :warning: WSL2 is turned on. :warning:
 
 ## Requirements
 
-- [Docker](https://www.docker.com/) - The author installed Docker Desktop in a windows environment.
+- [Docker](https://www.docker.com/) - The author installed **Docker Desktop** in a windows environment.
 - Create a Firestore table in [Firebase project](https://firebase.google.com/)
 - [Git](https://git-scm.com/downloads) - The author installed **Git for Windows** in a windows environment.
 
@@ -20,7 +20,7 @@ Setup to build [Firebase Local Emulator Suite](https://firebase.google.com/docs/
 Clone this project to any local directory.
 
 ```shell
-$ git clone 
+$ git clone https://github.com/Daiki48/firebase-emulator-on-docker.git
 ```
 
 Change directory.
@@ -69,7 +69,7 @@ Enter the container.
 :warning: For this container ID, enter the container ID that you have confirmed with your `docker ps -a`.
 
 ```shell
-docker exec -it 4a9589a15c0e /bin/bash
+$ docker exec -it 4a9589a15c0e /bin/bash
 ```
 
 For example, we can execute commands from the host machine to the container with `docker compose run --rm firebase firebase login --no-localhost`, but the last command `docker compose run --rm firebase firebase emulators:start` does not work correctly.  
