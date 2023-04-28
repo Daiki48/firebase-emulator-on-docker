@@ -4,7 +4,9 @@
 
 Setup to build [Firebase Local Emulator Suite](https://firebase.google.com/docs/emulator-suite) in a Docker container.
 
-:warning: Not tested on Mac and Linux Desktop. :warning:  
+Operation has been confirmed for Windows and Mac.
+
+:warning: Not tested on Linux Desktop. :warning:  
 :warning: WSL2 is turned on. :warning:
 
 ## Requirements
